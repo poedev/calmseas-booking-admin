@@ -29,6 +29,14 @@ module.exports = function(grunt) {
           compress: false
         },
         files: [{
+          '<%= meta.build %>css/bootstrap.css': '<%= meta.assets %>css/bootstrap/bootstrap.less',
+          '<%= meta.build %>css/admin-lte.css': '<%= meta.assets %>css/admin-lte/AdminLTE.less',
+          '<%= meta.build %>css/skins/skin-black.css': '<%= meta.assets %>css/admin-lte/skins/skin-black.less',
+          '<%= meta.build %>css/skins/skin-blue.css': '<%= meta.assets %>css/admin-lte/skins/skin-blue.less',
+          '<%= meta.build %>css/skins/skin-purple.css': '<%= meta.assets %>css/admin-lte/skins/skin-purple.less',
+          '<%= meta.build %>css/skins/skin-yellow.css': '<%= meta.assets %>css/admin-lte/skins/skin-yellow.less',
+          '<%= meta.build %>css/skins/skin-red.css': '<%= meta.assets %>css/admin-lte/skins/skin-red.less',
+          '<%= meta.build %>css/skins/skin-green.css': '<%= meta.assets %>css/admin-lte/skins/skin-green.less',
           '<%= meta.build %>css/style.css': '<%= meta.assets %>css/style.less',
           '<%= meta.build %>css/ie.css': '<%= meta.assets %>css/ie.less',
           '<%= meta.build %>css/print.css': '<%= meta.assets %>css/print.less'
@@ -39,7 +47,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           '<%= meta.build %>js/modernizr.js': ['<%= meta.assets %>js/libs/modernizr.2.8.3.js','<%= meta.assets %>js/libs/detectizr.js'],
-          '<%= meta.build %>js/libs.js': ['<%= meta.assets %>js/libs/jquery-1.11.2.js', '<%= meta.assets %>js/libs/plugins/*.js'],
+          '<%= meta.build %>js/ng.js': ['<%= meta.assets %>js/libs/ng.js', '<%= meta.assets %>js/libs/angular-sanitize.min.js'],
+          '<%= meta.build %>js/app.js': ['<%= meta.assets %>js/ng/app.js','<%= meta.assets %>js/ng/**/*.js'],
+          '<%= meta.build %>js/libs.js': ['<%= meta.assets %>js/libs/jquery-2.1.4.js', '<%= meta.assets %>js/libs/plugins/*.js'],
           '<%= meta.build %>js/l10n.js': '<%= meta.assets %>js/l10n.js',
           '<%= meta.build %>js/script.js': ['<%= meta.assets %>js/site.js', '<%= meta.assets %>js/plugins/*.js']
         }]
@@ -109,6 +119,22 @@ module.exports = function(grunt) {
           src: '.htaccess',
           dest: '<%= meta.build %>'
         }]
+      },
+      specjs: {
+        files: [{
+          expand: true,
+          cwd: '<%= meta.assets %>js/plugins/specific/',
+          src: '*.js',
+          dest: '<%= meta.build %>js/spe/'
+        }]
+      },
+      spejslib: {
+        files: [{
+          expand: true,
+          cwd: '<%= meta.assets %>js/libs/specific/',
+          src: '*.js',
+          dest: '<%= meta.build %>js/spe-lib/'
+        }]
       }
     },
     jshint: {
@@ -135,7 +161,7 @@ module.exports = function(grunt) {
         interrupt: true
       },
       js: {
-        files: ['<%= meta.assets %>js/plugins/*.js', '<%= meta.assets %>js/*.js'],
+        files: ['<%= meta.assets %>js/ng/**/*.js', '<%= meta.assets %>js/ng/*.js', '<%= meta.assets %>js/plugins/*.js', '<%= meta.assets %>js/*.js'],
         tasks: ['jshint', 'concat']
       },
       jade: {
@@ -205,7 +231,7 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           '<%= meta.build %>js/modernizr.js': ['<%= meta.assets %>js/libs/modernizr.2.8.3.js','<%= meta.assets %>js/libs/detectizr.js'],
-          '<%= meta.build %>js/libs.js': ['<%= meta.assets %>js/libs/jquery-1.11.2.js', '<%= meta.assets %>js/libs/plugins/*.js'],
+          '<%= meta.build %>js/libs.js': ['<%= meta.assets %>js/libs/jquery-2.1.4.js', '<%= meta.assets %>js/libs/plugins/*.js'],
           '<%= meta.build %>js/l10n.js': '<%= meta.assets %>js/l10n.js',
           '<%= meta.build %>js/script.js': ['<%= meta.assets %>js/site.js', '<%= meta.assets %>js/plugins/*.js']
         }]

@@ -1,10 +1,27 @@
 extends layouts/layout
 
 block vars
-  -title = 'Homepage'
+  -title = 'Bảng thống kê | Calmseas booking admin'
   -bodyClass = 'home'
   -menuIndex = 0
 
 block container
-  main#main
-    p(data-plugin) TODO
+  // Content Wrapper. Contains page content
+  .content-wrapper
+    // Content Header (Page header)
+    section.content-header
+      h1
+        | Page Header
+        small Optional description
+      ol.breadcrumb
+        li
+          a(href='#')
+            i.fa.fa-dashboard
+            |  Level
+        li.active Here
+    // Main content
+    section.content
+      // Your Page Content Here
+    // /.content
+  // /.content-wrapper
+

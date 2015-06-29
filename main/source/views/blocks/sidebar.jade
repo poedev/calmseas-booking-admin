@@ -1,0 +1,85 @@
+aside.main-sidebar
+  // sidebar: style can be found in sidebar.less
+  section.sidebar
+    // Sidebar user panel (optional)
+    .user-panel
+      .pull-left.image
+        img.img-circle(src='images/photos/user2-160x160.jpg', alt='User Image')
+      .pull-left.info
+        p Alexander Pierce
+        // Status
+        a(href='#')
+          i.fa.fa-circle.text-success
+          |  Online
+    // search form (Optional)
+    form.sidebar-form(action='#', method='get')
+      .input-group
+        input.form-control(type='text', name='q', placeholder='Search...')
+        span.input-group-btn
+          button#search-btn.btn.btn-flat(type='submit', name='search')
+            i.fa.fa-search
+    // /.search form
+    // Sidebar Menu
+    ul.sidebar-menu
+      li.header DANH MỤC
+      // Optionally, you can add icons to the links
+      li.active
+        a(href='#')
+          i.fa.fa-dashboard
+          span Thống kê
+      li
+        a(href='/goi-phong.html')
+          i.fa.fa-archive
+          span Gói phòng
+      li
+        a(href='#')
+          i.fa.fa-check-circle
+          span Gói extra
+      li
+        a(href='#')
+          i.fa.fa-link
+          span Thuộc tính phòng
+      li
+        a(href='#')
+          i.fa.fa-hotel
+          span Loại phòng
+      li
+        a(href='#')
+          i.fa.fa-image
+          span Thư viện ảnh
+      li
+        a(href='#')
+          i.fa.fa-book
+          span Đơn đặt phòng
+      li
+        a(href='#')
+          i.fa.fa-gift
+          span Quản lý coupon
+      li
+        a(href='#')
+          i.fa.fa-desktop
+          span Website chính
+      li
+        a(href='#')
+          i.fa.fa-gear
+          span Tài khoản
+      li
+        a(href='#')
+          i.fa.fa-history
+          span Logging
+      li.hide
+        a(href='#')
+          i.fa.fa-info-circle
+          span Hướng dẫn sử dụng
+      li.treeview.hide
+        a(href='#')
+          i.fa.fa-link
+          span Multilevel
+          i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li
+            a(href='#') Link in level 2
+          li
+            a(href='#') Link in level 2
+    // /.sidebar-menu
+  // /.sidebar
