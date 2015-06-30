@@ -1,0 +1,132 @@
+extends layouts/layout
+
+block vars
+  -title = 'Quản lý coupon | Calmseas booking admin'
+  -bodyClass = 'home'
+  -menuIndex = 0
+
+block container
+  // Content Wrapper. Contains page content
+  .content-wrapper
+    // Content Header (Page header)
+    section.content-header
+      h1
+        | Quản lý coupon
+      ol.breadcrumb
+        li
+          a(href='#')
+            i.fa.fa-gift
+            |  Coupon
+    // Main content
+    section.content
+      .col-xs-12.col-sm-5.no-pad.pad-right
+        .col-xs-12.no-pad
+          .box.box-success
+            .box-header
+              i.fa.fa-gift
+              h3.box-title Form tạo coupon
+              .pull-right.box-tools
+                button.btn.btn-sm.btn-info.brown Tạo
+            .box-body
+              form(action="#" method="post")
+                .form-group
+                  input.form-control(type="text" placeholder="Tên coupon" name="coupon-name")
+                .form-group.col-xs-4.no-pad
+                  input.form-control(type="text" placeholder="Mã đầu")
+                .form-group.col-xs-4.no-pad.pad-left
+                  input.form-control(type="text" placeholder="Từ (001)")
+                .form-group.col-xs-4.no-pad.pad-left
+                  input.form-control(type="text" placeholder="đến (020)")
+                .form-group.col-xs-8.no-pad
+                  select.form-control
+                    option Giảm toàn bộ
+                    option Gói phòng
+                    option Gói tiện ích
+                .form-group.col-xs-4.no-pad.pad-left
+                  .input-group
+                    input.form-control(type="text")
+                    .input-group-addon %
+                .form-group.col-xs-12.col-sm-6.no-pad
+                  .input-group
+                    .input-group-addon
+                      i.fa.fa-calendar
+                    input.form-control(type="datetime" placeholder="Ngày bắt đầu")
+                .form-group.col-xs-12.col-sm-6.no-pad.pad-left
+                  .input-group
+                    .input-group-addon
+                      i.fa.fa-calendar
+                    input.form-control(type="datetime" placeholder="Ngày kết thúc")
+                .form-group.target.col-xs-10.no-pad.pad-right
+                  select.form-control
+                    option Gói phòng 1
+                    option Gói phòng 2
+                    option Gói phòng 3
+                .form-group.col-xs-2.no-pad.text-right
+                  button.btn.btn-sm.brown
+                    i.fa.fa-plus
+                .form-group.target.col-xs-10.no-pad.pad-right
+                  select.form-control
+                    option Gói phòng 1
+                    option Gói phòng 2
+                    option Gói phòng 3
+
+        .col-xs-12.no-pad
+          .table-container
+          .row
+            .col-xs-12
+              .box
+                .box-header
+                  i.fa.fa-list-alt
+                  h3.box-title Danh sách coupon
+                // /.box-header
+                .box-body
+                  table.example2.table.table-bordered.table-hover
+                    thead
+                      tr
+                        th Tên coupon
+                        th Bắt đầu
+                        th Kết thúc
+                        th
+                    tbody
+                      tr(ng-repeat="i in [1,3,78,90,53,216] track by $index")
+                        td Calmseas coupon
+                        td {{$index}}-06-2015
+                        td {{$index + 5}}-06-2015
+                        td
+                          i.fa.fa-info-circle
+                          i.fa.fa-edit
+      .col-xs-12.col-sm-7.no-pad
+        .table-container.coupon-use-list-container
+          .row
+            .col-xs-12
+              .box(style="min-height: 780px")
+                .box-header
+                  i.fa.fa-list-alt
+                  h3.box-title Danh sách sử dụng
+                // /.box-header
+                .box-body
+                  table.coupon-use-list.table.table-bordered.table-hover
+                    thead
+                      tr
+                        th Tên coupon
+                        th Ngày sử dụng
+                        th Mã
+                        th Số
+                        th Giá trị giảm
+                    tbody
+                      tr(ng-repeat="i in [1,3,3526,2364343,4,5,25,56,78,90,53,216] track by $index")
+                        td Coupon Night buffet
+                        td {{$index}}-06-2015
+                        td CS
+                        td {{i}}
+                        td {{500000 | currency:'':0}}
+      .clearfix
+      // Your Page Content Here
+    // /.content
+  // /.content-wrapper
+block additionscript
+  script(src="js/spe-lib/jquery.dataTables.min.js")
+  script(src="js/spe-lib/dataTables.bootstrap.min.js")
+  script(src="js/spe-lib/jquery.slimscroll.min.js")
+  script(src="js/spe-lib/fastclick.min.js")
+  script(src="js/spe/goi-phong.js")

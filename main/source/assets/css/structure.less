@@ -6,3 +6,76 @@ body, html {
 .box {
   border-top: 3px solid #A59169;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.no-pad {
+  padding: 0px;
+}
+.pad-right {
+  padding-right: 15px;
+}
+.pad-left {
+  padding-left: 15px;
+}
+.btn {
+  &.brown {
+    background-color: #A59169;
+    color: #ffffff;
+  }
+  &.btn-info {
+    border: 0px;
+    border-radius: 0px;
+    &:hover {
+      color: #111111;
+    }
+  }
+}
+
+.fa {
+  &.fa-edit,
+  &.fa-info-circle {
+    margin: 3px;
+    color: #454545;
+    .pointer;
+    &:hover {
+      color: #2196F3;
+    }
+  }
+}
+
+.dataTable {
+  th {
+    position: relative;
+    &.sorting_desc {
+      &:after {
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 4px 4px 0px 4px;
+          border-color: #333333 transparent;
+          content: "";
+          position: absolute;
+          right: 5px;
+          top: 50%;
+          margin-top: -2px;
+      }
+    }
+    &.sorting_asc {
+      &:after {
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0px 4px 4px 4px;
+          border-color: #333333 transparent;
+          content: "";
+          position: absolute;
+          right: 5px;
+          top: 50%;
+          margin-top: -2px;
+      }
+    }
+  }
+}
