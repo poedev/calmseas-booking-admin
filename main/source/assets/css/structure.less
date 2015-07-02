@@ -79,3 +79,47 @@ body, html {
     }
   }
 }
+
+.box {
+  .box-desc {
+    color: #888888;
+    font-size: 0.9rem;
+  }
+  &.info-brief {
+    .box-body {
+      padding-top: 0px;
+    }
+    .info-group {
+      line-height: 1.6rem;
+      font-size: 1rem;
+      margin-top: 8px;
+      .title {
+        color: #555555;
+        font-size: 0.9rem;
+        .no-pad;
+      }
+      .value {
+        color: #111111;
+        .no-pad;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.coupon-man {
+  .remove-select {
+    color: #F44336;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    font-size: 15px;
+    margin-top: -7px;
+    margin-left: -9px;
+    opacity: 0.6;
+    .pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
