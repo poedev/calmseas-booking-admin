@@ -47,7 +47,6 @@ angular.module('calm-admin')
         end: '08-07-2015',
         applyToRooms: [{val: ''}],
         applyToExtras: [{val: ''}],
-        created: '',
         usedCode: []
       },
       usageSample: {
@@ -70,7 +69,9 @@ angular.module('calm-admin')
             fullName: '',
             phoneNum: '',
             bookFor: ''
-          }
+          },
+          beforePrice: 0,
+          afterPrice: 0
         }
       },
       couponUsages: [
